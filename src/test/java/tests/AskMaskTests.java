@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import pages.AskMaskMainPage;
 
+
 @Feature("Smoke Tests")
 @Tag("smoke")
 public class AskMaskTests extends TestBase {
