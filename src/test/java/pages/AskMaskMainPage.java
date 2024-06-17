@@ -12,6 +12,12 @@ import static com.codeborne.selenide.Selenide.*;
 
 
 public class AskMaskMainPage {
+    private static final String HOT_OFFERS = "Успей купить";
+    private static final String NEW_ITEMS = "Новинки";
+    private static final String SALE_ITEMS = "Акции";
+    private static final String BLOG_LATEST = "Последнее в блоге";
+    private static final String BRAND_MENU_ITEM = "Бренды";
+    private static final String CONTACTS_MENU_ITEM = "Контакты";
     private final SelenideElement logo =  $(".logo-block"),
                                 mainMenu = $(".table-menu"),
                                 searchBar = $("#title-search_fixed"),
@@ -20,16 +26,8 @@ public class AskMaskMainPage {
                                 saleItems = $("[data-class=sale_drag]"),
                                 blogArticles = $("[data-class=blog_drag]"),
                                 subscribeButton = $(".subscribe_button"),
-                                searchField = $("#title-search-input_fixed"),
-                                emptySearch = $(".container");
-                                String productTitle = "Dr. Ceuracle, Крем с витамином С";
-                                String Brand = "Paula's Choice";
+                                searchField = $("#title-search-input_fixed");
 
-
-    ContactPage contactPage = new ContactPage();
-    SubscriptionFormComponent subscriptionFormComponent = new SubscriptionFormComponent();
-    CatalogPage catalogPage = new CatalogPage();
-    ProductPage productPage = new ProductPage();
 
     @Step("Open AskMask main page")
     public AskMaskMainPage openPage() {
@@ -38,60 +36,65 @@ public class AskMaskMainPage {
         return this;
     }
 
-    @Step("Checking elements on main page are loaded")
-    public void verifyElementsAreLoaded() {
+    @Step("Checking main menu contains hot offers is available")
+    public void verifyMainMenuHotOffers() {
+        mainMenu.shouldBe(visible);
+        mainMenu.shouldHave(text(HOT_OFFERS));
+    }
 
-        mainMenu.shouldHave(text("Успей купить"));
+    @Step("Checking search bar is available")
+    public void verifySearchBar() {
         searchBar.shouldBe(visible);
+    }
+
+    @Step("Checking categories are available")
+    public void verifyProductCategories() {
         categories.shouldBe(visible);
-        newItems.shouldHave(text("Новинки"));
-        saleItems.shouldHave(text("Акции"));
-        blogArticles.shouldHave(text("Последнее в блоге"));
-
-    }
-    @Step("Checking officially distributed brands are available in menu")
-    public void verifyOfficialDistributionBrandsArePresented() {
-
-        mainMenu.$(byText("Бренды")).hover();
-        $(withText("Dr.Ceuracle")).should(Condition.exist);
-        $(withText("Blithe")).should(Condition.exist);
-        $(withText("Sioris")).should(Condition.exist);
-        $(withText("Uteki")).should(Condition.exist);
-
     }
 
-    @Step("Checking subscription is available")
-    public void verifySubscription() {
+    @Step("Checking elements on main page are loaded")
+    public void verifyElementsAreLoadedWithCorrectTitles() {
+        newItems.shouldHave(text(NEW_ITEMS));
+        saleItems.shouldHave(text(SALE_ITEMS));
+        blogArticles.shouldHave(text(BLOG_LATEST));
+    }
 
+    @Step("Open brand menu")
+    public AskMaskMainPage openBrandMenu() {
+        mainMenu.$(byText(BRAND_MENU_ITEM)).hover();
+        return this;
+    }
+
+    @Step("Checking officially distributed {value} are available in menu")
+    public void verifyOfficialDistributionBrandArePresented(String value) {
+        $(withText(value)).should(Condition.exist);
+    }
+
+
+    @Step("Click on Subscription")
+    public SubscriptionFormComponent clickOnSubscribeButton() {
         subscribeButton.click();
-        subscriptionFormComponent.verifySubscriptionForm();
-        subscriptionFormComponent.verifySubscriptionError();
-        subscriptionFormComponent.verifyNoSubscriptionForm();
+        return page(SubscriptionFormComponent.class);
     }
 
-    @Step("Checking contacts page contains actual information")
-    public void verifyContacts(){
 
-        mainMenu.$(byText("Контакты")).click();
-        contactPage.verifyContactPageData();
-
+    @Step("Open contacts")
+    public ContactPage clickOnContacts() {
+        mainMenu.$(byText(CONTACTS_MENU_ITEM)).click();
+        return page(ContactPage.class);
     }
 
-    @Step("Searching for bestseller product")
-    public void verifySearchForProduct() {
 
-        searchField.setValue(productTitle).pressEnter();
-        catalogPage.verifyCatalogPage();
-        productPage.verifyProductPage();
-
+    @Step("Set search for product")
+    public CatalogPage setSearchProduct(String product){
+        searchField.setValue(product).pressEnter();
+        return page(CatalogPage.class);
     }
 
-    @Step("Searching for not presented brand")
-    public void verifyNoBrandAvailable() {
-
-        searchField.setValue(Brand).pressEnter();
-        emptySearch.shouldHave(text("Сожалеем, но ничего не найдено."));
-
+    @Step("Set search for not presented brand")
+    public ResultPage setWrongSearch(String brand) {
+        searchField.setValue(brand).pressEnter();
+        return page(ResultPage.class);
     }
 
 }

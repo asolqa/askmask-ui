@@ -15,28 +15,44 @@ public class SubscriptionFormComponent {
                                       closeSubscription =$(".close");
 
 
+    @SuppressWarnings("UnusedReturnValue")
     @Step("Checking subscription form appears")
-    public void verifySubscriptionForm() {
+    public SubscriptionFormComponent verifySubscriptionForm() {
 
         subscribeForm.should(appear);
         subscribeFormTitle.shouldHave(text("Подписка на рассылку"));
         emailForSubscriptionField.shouldBe(visible);
         submitSubscription.shouldBe(visible);
+        return this;
 
+    }
+
+    @Step("Submit subscription")
+    public SubscriptionFormComponent submitSubscription(){
+        submitSubscription.shouldBe(visible).click();
+        return this;
     }
 
     @Step("Checking not allowed subscription without email")
-        public void verifySubscriptionError() {
+        public SubscriptionFormComponent verifySubscriptionError() {
 
-        submitSubscription.shouldBe(visible).click();
+        //submitSubscription.shouldBe(visible).click();
         subscriptionError.shouldHave(text("Заполните это поле"));
+        return this;
 
     }
-    @Step("Checking subscription form can be closed")
-        public void verifyNoSubscriptionForm() {
 
+    @Step("Close subscription form")
+    public void closeSubscriptionForm(){
         closeSubscription.shouldBe(visible).click();
         subscribeForm.shouldNotBe(visible);
-
     }
+
+    /*@Step("Checking no subscription form is visible")
+        public void verifyNoSubscriptionForm() {
+
+        //closeSubscription.shouldBe(visible).click();
+        subscribeForm.shouldNotBe(visible);
+
+    }*/
 }
