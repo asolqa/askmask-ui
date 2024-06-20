@@ -13,8 +13,8 @@ brands in Russia
 
 - <a href="#tools">Tools and technologies</a>
 - <a href="#scenarios">Test scenarios</a>
-- <a href="#jenkins">CI/CD with Jenkins</a>
 - <a href="#cli">Launch from the CLI</a>
+- <a href="#jenkins">CI/CD with Jenkins</a>
 - <a href="#allure">Allure reporting</a>
 - <a href="#allure-testops">Integration with Allure TestOps</a>
 - <a href="#jira">Integration with JIRA</a>
@@ -55,26 +55,48 @@ brands in Russia
 ## <img alt="Jenkins" height="25" src="./media/logo/Jenkins.svg" width="25"/></a><a name="CI/CD with Jenkins"></a>CI/CD with [Jenkins](https://jenkins.autotests.cloud/job/26-asolqa-training_project/)</a>
 <img alt="Jenkins" src="./media/reports/Jenkins.png"> 
 
-### Jenkins parameters:
+### Jenkins job parameters:
 
-- `TASK` (all tests will be launched by `askmask_smoke_test` by default)
-- `BROWSER` (browser, `chrome` by default)
-- `BROWSER_VERSION` (version of browser, `120` by default)
-- `BROWSER_SIZE` (browser windows size, `1920x1080` by default)
-- `WD_HOST` (data of remote Selenoid server)
+- `COMMENT` (by default @asolqa is tagged)
+
+After the build is done the test results are available in `Allure`, `Allure TestOps` and `JIRA`
+
 
 <a id="cli"></a>
 ## <img alt="cli" height="25" src="./media/logo/run.png" width="25"> Launch from the CLI
 
 **Local launch:**
 ```bash  
-./gradlew clean askmask_smoke_test
+./gradlew clean askmask_smoke_test Denv=local
 ```
 
-**Remote Jenkins launch:**
+**Remote launch:**
 ```bash  
-clean ${TASK} -Dbrowser=${BROWSER} -DbrowserVersion=${BROWSER_VERSION} -DbrowserSize=${BROWSER_SIZE} -DwdHost=${WD_HOST}
+./gradlew clean askmask_smoke_test Denv=remote
 ```
+Config is done with `Owner` library. 
+
+All browser configurations are described in the `common-config.propeties`, `local.properties` and `remote.properties` files.
+If needed configurations could be changed in those files.
+
+Properties file config explanation:
+- `browser` (browser for UI tests, chrome is supported)
+- `browser.version` (version of browser for UI tests)
+- `browser.size` (size of browser for UI tests)
+- `base.url` (URL for UI tests)
+- `page.load.strategy` (how web driver handles the loading of new page, by default is `eager`)
+- `remote.url` (URL for remote WebDriver)
+- `remote.mode.enabled` (defines local or remote environments)
+
+<a id="jenkins"></a>
+## <img alt="Jenkins" height="25" src="./media/logo/Jenkins.svg" width="25"/></a><a name="CI/CD with Jenkins"></a>CI/CD with [Jenkins](https://jenkins.autotests.cloud/job/26-asolqa-training_project/)</a>
+<img alt="Jenkins" src="./media/reports/Jenkins.png"> 
+
+### Jenkins job parameters:
+
+- `COMMENT` (by default @asolqa is tagged)
+
+After the build is done the test results are available in `Allure`, `Allure TestOps` and `JIRA`
 
 <a id="allure"></a>
 ## <img alt="Allure" height="25" src="./media/logo/Allure.svg" width="25"/></a> <a name="Allure"></a>Allure [reporting](https://jenkins.autotests.cloud/job/26-asolqa-training_project/allure/)</a>
@@ -92,7 +114,10 @@ clean ${TASK} -Dbrowser=${BROWSER} -DbrowserVersion=${BROWSER_VERSION} -Dbrowser
 <a id="allure-testops"></a>
 ## <img alt="Allure" height="25" src="./media/logo/AllureTestOps.svg" width="25"/></a> Integration with <a target="_blank" href="https://allure.autotests.cloud/project/4206/dashboards">Allure TestOps</a>
 
-All test cases and execution results are available in `Allure TestOps`. Dashboard contains test runs statistics:
+`Allure TestOps` allows to have tests as documentation and synchronizes automated and manual tests. 
+Here all test cases execution results are available. 
+
+Dashboard contains test runs statistics:
 <img alt="Dashboard" src="./media/reports/Dashboard.png">
 
 Automated cases:
@@ -100,6 +125,9 @@ Automated cases:
 
 Manual cases:
 <img alt="Cases2" src="./media/reports/ManualCases.png">
+
+Manual cases added from the code for future automation:
+TBD
 
 Launches:
 <img alt="Launch" src="./media/reports/Launches.png">
