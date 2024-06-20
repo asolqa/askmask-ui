@@ -12,8 +12,8 @@ brands in Russia
 
 ## Content:
 
-- <a href="#facts">About the project</a>
 - <a href="#tools">Tools and technologies</a>
+- <a href="#facts">Project features</a>
 - <a href="#scenarios">Test scenarios</a>
 - <a href="#cli">Launch from the CLI</a>
 - <a href="#jenkins">CI/CD with Jenkins</a>
@@ -22,19 +22,6 @@ brands in Russia
 - <a href="#jira">Integration with JIRA</a>
 - <a href="#telegram">Bot notifications in Telegram</a>
 - <a href="#video">Examples of test execution</a>
-
-
-
-<a id="facts"></a>
-## About the project
-* `Page Object` pattern
-* Config with `Owner` library
-* Tests parametrization
-* `Allure` reporting with logged tests information
-* Manual tests in code for future automation
-* Launch all or separate tests from `Allure TestOps` directly
-* `JIRA` integration
-* Telegram notifications
 
 
 <a id="tools"></a>
@@ -52,6 +39,17 @@ brands in Russia
 <a href="https://www.jenkins.io/"><img src="./media/logo/Jenkins.svg" width="50" height="50"  alt="Jenkins"/></a>  
 <a href="https://www.atlassian.com/ru/software/jira/"><img src="./media/logo/JIRA.svg" width="50" height="50"  alt="Jira"/></a>
 </p>
+
+<a id="facts"></a>
+## Project features
+* `Page Object` pattern
+* Config with `Owner` library
+* Tests parametrization
+* `Allure` reporting with logged tests information
+* Manual tests in code for future automation
+* Launch all or separate tests from `Allure TestOps` directly
+* `JIRA` integration
+* Telegram notifications
 
 <a id="scenarios"></a>
 ## Test Scenarios
