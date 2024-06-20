@@ -18,7 +18,7 @@ public class ContactsTests extends TestBase {
 
   @DisplayName("Contacts are available test")
   @Severity(SeverityLevel.CRITICAL)
-  @ParameterizedTest(name = "(Item {0})")
+  @ParameterizedTest(name = "({0})")
   @CsvFileSource(resources = "/contacts.csv")
   public void contactPageContainsActualInfoTest(String label, String expectedValue) {
 

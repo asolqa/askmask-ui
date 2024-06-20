@@ -25,7 +25,7 @@ brands in Russia
 
 
 <a id="tools"></a>
-## Tools and technologies:
+## Tools and technologies
 <p align="center">
 <a href="https://www.jetbrains.com/idea/"><img src="./media/logo/Idea.svg" width="50" height="50"  alt="IDEA"/></a>  
 <a href="https://www.java.com/"><img src="./media/logo/java.svg" width="50" height="50"  alt="Java"/></a>  
@@ -92,7 +92,7 @@ Properties file config explanation:
 - `remote.mode.enabled` (defines local or remote environments)
 
 <a id="jenkins"></a>
-## <img alt="Jenkins" height="25" src="./media/logo/Jenkins.svg" width="25"/></a><a name="CI/CD with Jenkins"></a>CI/CD with [Jenkins](https://jenkins.autotests.cloud/job/26-asolqa-training_project/)</a>
+## <img alt="Jenkins" height="25" src="./media/logo/Jenkins.svg" width="25"/></a><a name="CI/CD with Jenkins"></a>CI/CD with [Jenkins](https://jenkins.autotests.cloud/job/26-asolqa-allure-example/)</a>
 <img alt="Jenkins" src="./media/reports/Jenkins.png"> 
 
 ### Jenkins job parameters:
@@ -123,6 +123,8 @@ Here all test cases execution results are available.
 Dashboard contains test runs statistics:
 <img alt="Dashboard" src="./media/reports/Dashboard.png">
 
+There is custom Dashboard data:
+
 Automated cases:
 <img alt="Cases1" src="./media/reports/AutomatedCases.png">
 
@@ -140,7 +142,7 @@ Launches:
 <a id="jira"></a>
 ## <img alt="Allure" height="25" src="./media/logo/JIRA.svg" width="25"/></a> Integration with <a target="_blank" href="https://jira.autotests.cloud/browse/HOMEWORK-1202">Jira</a>
 
-`Jira` task has information about all created test cases, their statuses and test launches results from `Allure TestOps`:
+`Jira` has information about all related test launches results from `Allure TestOps`:
 
 <img alt="JIRA" src="./media/reports/JIRA.png">
 
