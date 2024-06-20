@@ -124,15 +124,16 @@ Dashboard contains test runs statistics:
 <img alt="Dashboard" src="./media/reports/Dashboard.png">
 
 There is custom Dashboard data:
+<img alt="Launch" src="./media/reports/TestOpsCustomDashboard.png">
 
 Automated cases:
-<img alt="Cases1" src="./media/reports/AutomatedCases.png">
+<img alt="Cases1" src="./media/reports/TestOpsAutomated.png">
 
 Manual cases:
-<img alt="Cases2" src="./media/reports/ManualCases.png">
+<img alt="Cases2" src="./media/reports/TestOpsManual.png">
 
 Manual cases added from the code for future automation:
-TBD
+<img alt="Cases2" src="./media/reports/TestOpsManualCode.png">
 
 Launches:
 <img alt="Launch" src="./media/reports/Launches.png">
