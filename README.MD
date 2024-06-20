@@ -9,8 +9,10 @@ brands in Russia
 
 ---
 
+
 ## Content:
 
+- <a href="#facts">About the project</a>
 - <a href="#tools">Tools and technologies</a>
 - <a href="#scenarios">Test scenarios</a>
 - <a href="#cli">Launch from the CLI</a>
@@ -20,6 +22,19 @@ brands in Russia
 - <a href="#jira">Integration with JIRA</a>
 - <a href="#telegram">Bot notifications in Telegram</a>
 - <a href="#video">Examples of test execution</a>
+
+
+
+<a id="facts"></a>
+## About the project
+* `Page Object` pattern
+* Config with `Owner` library
+* Tests parametrization
+* `Allure` reporting with logged tests information
+* Manual tests in code for future automation
+* Launch all or separate tests from `Allure TestOps` directly
+* `JIRA` integration
+* Telegram notifications
 
 
 <a id="tools"></a>
@@ -51,15 +66,6 @@ brands in Russia
 * [x] Verify basket is empty when no products were added (manual)
 * [x] Verify auth error with incorrect password (manual in code)
 
-<a id="jenkins"></a>
-## <img alt="Jenkins" height="25" src="./media/logo/Jenkins.svg" width="25"/></a><a name="CI/CD with Jenkins"></a>CI/CD with [Jenkins](https://jenkins.autotests.cloud/job/26-asolqa-training_project/)</a>
-<img alt="Jenkins" src="./media/reports/Jenkins.png"> 
-
-### Jenkins job parameters:
-
-- `COMMENT` (by default @asolqa is tagged)
-
-After the build is done the test results are available in `Allure`, `Allure TestOps` and `JIRA`
 
 
 <a id="cli"></a>
@@ -74,7 +80,6 @@ After the build is done the test results are available in `Allure`, `Allure Test
 ```bash  
 ./gradlew clean askmask_smoke_test Denv=remote
 ```
-Config is done with `Owner` library. 
 
 All browser configurations are described in the `common-config.propeties`, `local.properties` and `remote.properties` files.
 If needed configurations could be changed in those files.
@@ -114,7 +119,7 @@ After the build is done the test results are available in `Allure`, `Allure Test
 <a id="allure-testops"></a>
 ## <img alt="Allure" height="25" src="./media/logo/AllureTestOps.svg" width="25"/></a> Integration with <a target="_blank" href="https://allure.autotests.cloud/project/4206/dashboards">Allure TestOps</a>
 
-`Allure TestOps` allows to have tests as documentation and synchronizes automated and manual tests. 
+`Allure TestOps` processes tests as a documentation and synchronizes automated and manual verifications. 
 Here all test cases execution results are available. 
 
 Dashboard contains test runs statistics:
