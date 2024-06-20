@@ -34,6 +34,8 @@ public class MainPageTests extends TestBase {
   @CsvFileSource(resources = "/brands.csv")
   public void officialDistributionBrandsAreShownInMenuTest(String value) {
 
-    askMaskMainPage.openPage().openBrandMenu().verifyOfficialDistributionBrandArePresented(value);
+    askMaskMainPage.openPage()
+            .openBrandMenu()
+            .verifyOfficialDistributionBrandArePresented(value);
   }
 }
