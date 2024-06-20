@@ -16,16 +16,17 @@ public class ContactPage {
       messageButton = $("[data-name=contacts]");
 
   @Step("Checking contact page has {value} data")
-  public ContactPage verifyContactPageData() {
+  public ContactPage verifyContactPageData(String label, String expectedValue) {
 
     pageTitle.shouldHave(text(CONTACTS_PAGE_TITLE));
-    //mainBlock.shouldHave(text(value));
-    mainBlock.shouldHave(text("Режим работы"));
+    mainBlock.shouldHave(text(label));
+    mainBlock.shouldHave(text(expectedValue));
+    /*mainBlock.shouldHave(text("Режим работы"));
     mainBlock.shouldHave(text("с 10.00 до 19.00"));
     mainBlock.shouldHave(text("Телефон"));
     mainBlock.shouldHave(text("+7 (495) 185-04-22"));
     mainBlock.shouldHave(text("E-mail"));
-    mainBlock.shouldHave(text("ask@askmask.ru"));
+    mainBlock.shouldHave(text("ask@askmask.ru"));*/
     return this;
   }
 

@@ -27,7 +27,7 @@ public class TestBase {
     Configuration.browserVersion = WEB_CONFIG.browserVersion();
     Configuration.pageLoadStrategy = WEB_CONFIG.pageLoadStrategy();
 
-    if(WEB_CONFIG.isRemoteEnabled()) {
+    if (WEB_CONFIG.isRemoteEnabled()) {
       Configuration.remote = "https://user1:1234@" + WEB_CONFIG.remoteUrl() + "/wd/hub";
     }
 

@@ -18,6 +18,7 @@ import org.openqa.selenium.TakesScreenshot;
 public class Attach {
 
   private static final WebConfig WEB_CONFIG = ConfigReader.INSTANCE.webConfig();
+
   @Attachment(value = "{attachName}", type = "image/png")
   public static byte[] screenshotAs(@SuppressWarnings("unused") String attachName) {
     return ((TakesScreenshot) getWebDriver()).getScreenshotAs(OutputType.BYTES);
