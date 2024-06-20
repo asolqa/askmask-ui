@@ -115,7 +115,7 @@ After the build is done the test results are available in `Allure`, `Allure Test
 <img alt="Allure2" src="./media/reports/AllureReportExample2.png">
 
 <a id="allure-testops"></a>
-## <img alt="Allure" height="25" src="./media/logo/AllureTestOps.svg" width="25"/></a> Integration with <a target="_blank" href="https://allure.autotests.cloud/project/4237/dashboards">Allure TestOps</a>
+## <img alt="Allure" height="25" src="./media/logo/AllureTestOps.svg" width="25"/></a> Integration with <a target="_blank" href="https://allure.autotests.cloud/project/4273/dashboards">Allure TestOps</a>
 
 `Allure TestOps` processes tests as a documentation and synchronizes automated and manual verifications. 
 Here all test cases execution results are available. 
