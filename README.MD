@@ -96,9 +96,9 @@ Properties file config explanation:
 ## <img alt="Jenkins" height="25" src="./media/logo/Jenkins.svg" width="25"/></a><a name="CI/CD with Jenkins"></a>CI/CD with [Jenkins](https://jenkins.autotests.cloud/job/26-asolqa-allure-example/)</a>
 <img alt="Jenkins" src="./media/reports/Jenkins.png"> 
 
-### Jenkins job parameters:
+### Jenkins job
 
-- `COMMENT` (by default @asolqa is tagged)
+- `COMMENT` parameter (by default @asolqa is tagged)
 
 After the build is done the test results are available in `Allure`, `Allure TestOps` and `JIRA`
 
@@ -124,7 +124,7 @@ Here all test cases execution results are available.
 Dashboard contains test runs statistics:
 <img alt="Dashboard" src="./media/reports/Dashboard.png">
 
-There is custom Dashboard data:
+Custom Dashboard data:
 <img alt="Launch" src="./media/reports/TestOpsCustomDashboard.png">
 
 Automated cases:
