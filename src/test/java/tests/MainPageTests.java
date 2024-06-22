@@ -15,25 +15,28 @@ import pages.AskMaskMainPage;
 @Tag("smoke")
 public class MainPageTests extends TestBase {
 
-  AskMaskMainPage askMaskMainPage = new AskMaskMainPage();
+    AskMaskMainPage askMaskMainPage = new AskMaskMainPage();
 
-  @DisplayName("Main Page smoke test")
-  @Severity(SeverityLevel.BLOCKER)
-  @Test
-  public void mainPageSmokeTest() {
+    @DisplayName("Main Page smoke test")
+    @Severity(SeverityLevel.BLOCKER)
+    @Test
+    public void mainPageSmokeTest() {
 
-    askMaskMainPage.openPage().verifyMainMenuHotOffers();
-    askMaskMainPage.verifySearchBar();
-    askMaskMainPage.verifyProductCategories();
-    askMaskMainPage.verifyElementsAreLoadedWithCorrectTitles();
-  }
+        askMaskMainPage.openPage()
+                .verifyMainMenuHotOffers();
+        askMaskMainPage.verifySearchBar();
+        askMaskMainPage.verifyProductCategories();
+        askMaskMainPage.verifyElementsAreLoadedWithCorrectTitles();
+    }
 
-  @DisplayName("Official brands test")
-  @Severity(SeverityLevel.CRITICAL)
-  @ParameterizedTest(name = "(Brand {0})")
-  @CsvFileSource(resources = "/brands.csv")
-  public void officialDistributionBrandsAreShownInMenuTest(String value) {
+    @DisplayName("Official brands test")
+    @Severity(SeverityLevel.CRITICAL)
+    @ParameterizedTest(name = "(Brand {0})")
+    @CsvFileSource(resources = "/brands.csv")
+    public void officialDistributionBrandsAreShownInMenuTest(String value) {
 
-    askMaskMainPage.openPage().openBrandMenu().verifyOfficialDistributionBrandArePresented(value);
-  }
+        askMaskMainPage.openPage()
+                .openBrandMenu()
+                .verifyOfficialDistributionBrandArePresented(value);
+    }
 }
