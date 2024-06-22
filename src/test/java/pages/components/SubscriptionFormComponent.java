@@ -7,7 +7,6 @@ import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 
 public class SubscriptionFormComponent {
-
   private static final String SUBSCRIPTION_FORM_TITLE = "Подписка на рассылку";
   private static final String SUBSCRIBE_ERROR = "Заполните это поле";
   private final SelenideElement subscribeForm = $(".subscribe_frame"),
@@ -19,7 +18,6 @@ public class SubscriptionFormComponent {
 
   @Step("Checking subscription form appears")
   public SubscriptionFormComponent verifySubscriptionForm() {
-
     subscribeForm.should(appear);
     subscribeFormTitle.shouldHave(text(SUBSCRIPTION_FORM_TITLE));
     emailForSubscriptionField.shouldBe(visible);

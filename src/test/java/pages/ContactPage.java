@@ -8,14 +8,13 @@ import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 
 public class ContactPage {
-
   private static final String CONTACTS_PAGE_TITLE = "Контакты";
   private final SelenideElement pageTitle = $("#pagetitle"),
       mainBlock = $(".bottom_block"),
       map = $(".bx-yandex-view-map"),
       messageButton = $("[data-name=contacts]");
 
-  @Step("Checking contact page has {value} data")
+  @Step("Checking contact page has {label} data")
   public ContactPage verifyContactPageData(String label, String expectedValue) {
 
     pageTitle.shouldHave(text(CONTACTS_PAGE_TITLE));

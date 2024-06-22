@@ -14,26 +14,28 @@ import pages.AskMaskMainPage;
 @Tag("smoke")
 public class SearchTests extends TestBase {
 
-  AskMaskMainPage askMaskMainPage = new AskMaskMainPage();
+    AskMaskMainPage askMaskMainPage = new AskMaskMainPage();
 
-  @DisplayName("Search for bestseller product")
-  @Severity(SeverityLevel.CRITICAL)
-  @Test
-  public void searchForProductTest() {
+    @DisplayName("Search for bestseller product")
+    @Severity(SeverityLevel.CRITICAL)
+    @Test
+    public void searchForProductTest() {
 
-    askMaskMainPage
-        .openPage()
-        .setSearchProduct(TestData.PRODUCT)
-        .verifyCatalogPageResults()
-        .clickOnProduct()
-        .verifyProductPage();
-  }
+        askMaskMainPage
+                .openPage()
+                .setSearchProduct(TestData.PRODUCT)
+                .verifyCatalogPageResults()
+                .clickOnProduct()
+                .verifyProductPage();
+    }
 
-  @DisplayName("Search for not presented brand")
-  @Test
-  @Severity(SeverityLevel.NORMAL)
-  public void emptySearchTest() {
-
-    askMaskMainPage.openPage().setWrongSearch(TestData.BRAND).verifyNoBrandAvailable();
-  }
+    @DisplayName("Search for not presented brand")
+    @Test
+    @Severity(SeverityLevel.NORMAL)
+    public void emptySearchTest() {
+        askMaskMainPage
+                .openPage()
+                .setWrongSearch(TestData.BRAND)
+                .verifyNoBrandAvailable();
+    }
 }

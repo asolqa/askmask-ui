@@ -1,6 +1,7 @@
 package io.qameta.ExtensionForManual;
 
 import io.qameta.allure.LabelAnnotation;
+
 import java.lang.annotation.*;
 
 @Documented
@@ -8,4 +9,5 @@ import java.lang.annotation.*;
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.METHOD, ElementType.TYPE})
 @LabelAnnotation(name = "ALLURE_MANUAL", value = "true")
-public @interface Manual {}
+public @interface Manual {
+}

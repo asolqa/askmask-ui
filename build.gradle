@@ -1,9 +1,6 @@
-import com.diffplug.spotless.LineEnding
-
 plugins {
 	id 'java-library'
 	id 'io.qameta.allure' version '2.11.2'
-	id 'com.diffplug.spotless' version '6.25.0'
 }
 
 
@@ -67,22 +64,6 @@ tasks.withType(Test).configureEach {
 tasks.register('askmask_smoke_tests', Test) {
 	useJUnitPlatform {
 		includeTags("smoke")
-	}
-}
-
-
-spotless {
-	java {
-		importOrder()
-		googleJavaFormat()
-		removeUnusedImports()
-		toggleOffOn()
-		lineEndings = LineEnding.GIT_ATTRIBUTES
-	}
-
-	groovyGradle {
-		target '*.gradle' // default target of groovyGradle
-		greclipse()
 	}
 }
 

@@ -9,7 +9,6 @@ import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 
 public class CatalogPage {
-
   private static final String SEARCH_PAGE_TITLE = "Поиск";
   private final SelenideElement pageTitle = $("#pagetitle"),
       leftMenuBlock = $(".sticky-sidebar__inner"),

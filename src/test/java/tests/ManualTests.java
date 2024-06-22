@@ -14,17 +14,17 @@ import org.junit.jupiter.api.Test;
 @Feature("Manual verification")
 @Tag("smoke")
 public class ManualTests {
-  @Test
-  @Manual
-  @DisplayName("Error on entering incorrect password test")
-  @Severity(SeverityLevel.CRITICAL)
-  public void unsuccessfulAuthTest() {
-    step("Open askmask.ru");
-    step("Click on personal area icon in the header");
-    step("Switch to 'Вход по логину и паролю' option on appeared form");
-    step("Fill field 'Логин' with valid data");
-    step("Fill field 'Пароль' with invalid data");
-    step("Press button `Войти`");
-    step("Verify 'Неверный логин или пароль' appears");
-  }
+    @Test
+    @Manual
+    @DisplayName("Error on entering incorrect password test")
+    @Severity(SeverityLevel.CRITICAL)
+    public void unsuccessfulAuthTest() {
+        step("Open askmask.ru");
+        step("Click on personal area icon in the header");
+        step("Switch to 'Вход по логину и паролю' option on appeared form");
+        step("Fill field 'Логин' with valid data");
+        step("Fill field 'Пароль' with invalid data");
+        step("Press button `Войти`");
+        step("Verify 'Неверный логин или пароль' appears");
+    }
 }

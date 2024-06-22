@@ -13,30 +13,30 @@ import pages.AskMaskMainPage;
 @Tag("smoke")
 public class SubscriptionTests extends TestBase {
 
-  AskMaskMainPage askMaskMainPage = new AskMaskMainPage();
+    AskMaskMainPage askMaskMainPage = new AskMaskMainPage();
 
-  @DisplayName("Subscription form test")
-  @Severity(SeverityLevel.CRITICAL)
-  @Test
-  public void subscriptionAvailableTest() {
+    @DisplayName("Subscription form test")
+    @Severity(SeverityLevel.CRITICAL)
+    @Test
+    public void subscriptionAvailableTest() {
 
-    askMaskMainPage
-        .openPage()
-        .clickOnSubscribeButton()
-        .verifySubscriptionForm()
-        .closeSubscriptionForm();
-  }
+        askMaskMainPage
+                .openPage()
+                .clickOnSubscribeButton()
+                .verifySubscriptionForm()
+                .closeSubscriptionForm();
+    }
 
-  @DisplayName("Subscription is not available without email test")
-  @Severity(SeverityLevel.NORMAL)
-  @Test
-  public void subscriptionErrorTest() {
+    @DisplayName("Subscription is not available without email test")
+    @Severity(SeverityLevel.NORMAL)
+    @Test
+    public void subscriptionErrorTest() {
 
-    askMaskMainPage
-        .openPage()
-        .clickOnSubscribeButton()
-        .submitSubscription()
-        .verifySubscriptionError()
-        .closeSubscriptionForm();
-  }
+        askMaskMainPage
+                .openPage()
+                .clickOnSubscribeButton()
+                .submitSubscription()
+                .verifySubscriptionError()
+                .closeSubscriptionForm();
+    }
 }

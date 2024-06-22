@@ -44,7 +44,6 @@ brands in Russia
 ## Project features
 * `Page Object` pattern
 * Config with `Owner` library
-* Standardized code formatting with `Spotless` 
 * Tests parametrization
 * `Allure` reporting with logged tests information
 * Manual tests in code for future automation
@@ -56,12 +55,12 @@ brands in Russia
 ## Test Scenarios
 * [x] Verify main page elements
 * [x] Verify official brands are shown in the brand menu (parametrized)
-* [x] Verify contact page contains actual information
+* [x] Verify contact page contains actual information (parametrized)
 * [x] Verify subscription is available
 * [x] Verify subscription error without e-mail
 * [x] Verify search for product works as expected
 * [x] Verify empty search for brand which is not presented 
-* [x] Verify blog page contains article about niacinamide
+* [x] Verify blog page contains article about niacinamide (manual)
 * [x] Verify basket is empty when no products were added (manual)
 * [x] Verify auth error with incorrect password (manual in code)
 

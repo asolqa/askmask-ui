@@ -14,19 +14,18 @@ import pages.AskMaskMainPage;
 @Tag("smoke")
 public class ContactsTests extends TestBase {
 
-  AskMaskMainPage askMaskMainPage = new AskMaskMainPage();
+    AskMaskMainPage askMaskMainPage = new AskMaskMainPage();
 
-  @DisplayName("Contacts are available test")
-  @Severity(SeverityLevel.CRITICAL)
-  @ParameterizedTest(name = "({0})")
-  @CsvFileSource(resources = "/contacts.csv")
-  public void contactPageContainsActualInfoTest(String label, String expectedValue) {
-
-    askMaskMainPage
-        .openPage()
-        .clickOnContacts()
-        .verifyContactPageData(label, expectedValue)
-        .verifyMapVisibility()
-        .verifyMessageOption();
-  }
+    @DisplayName("Contacts are available test")
+    @Severity(SeverityLevel.CRITICAL)
+    @ParameterizedTest(name = "({0})")
+    @CsvFileSource(resources = "/contacts.csv")
+    public void contactPageContainsActualInfoTest(String label, String expectedValue) {
+        askMaskMainPage
+                .openPage()
+                .clickOnContacts()
+                .verifyContactPageData(label, expectedValue)
+                .verifyMapVisibility()
+                .verifyMessageOption();
+    }
 }
