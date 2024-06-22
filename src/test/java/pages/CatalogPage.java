@@ -22,7 +22,6 @@ public class CatalogPage {
         leftMenuBlock.shouldBe(visible);
         filterSections.shouldBe(visible);
         productId.shouldBe(visible);
-
         return this;
     }
 
