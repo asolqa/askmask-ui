@@ -33,7 +33,7 @@ public class MainPageTests extends TestBase {
     @Severity(SeverityLevel.CRITICAL)
     @ParameterizedTest(name = "(Brand {0})")
     @CsvFileSource(resources = "/brands.csv")
-    public void officialDistributionBrandsAreShownInMenuTest(String value) {
+    public void officialDistributionBrandsTest(String value) {
 
         askMaskMainPage.openPage()
                 .openBrandMenu()

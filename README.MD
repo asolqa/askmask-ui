@@ -54,7 +54,7 @@ brands in Russia
 <a id="scenarios"></a>
 ## Test Scenarios
 * [x] Verify main page elements
-* [x] Verify official brands are shown in the brand menu (parametrized)
+* [x] Verify official brands are presented (parametrized)
 * [x] Verify contact page contains actual information (parametrized)
 * [x] Verify subscription is available
 * [x] Verify subscription error without e-mail
@@ -134,6 +134,12 @@ Manual cases:
 
 Manual cases added from the code for future automation:
 <img alt="Cases2" src="./media/reports/TestOpsManualCode.png">
+
+To launch tests from TMS directly move to <a target="_blank" href="https://allure.autotests.cloud/project/4273/jobs">Jobs</a>:
+<img alt="Cases2" src="./media/reports/Jobs.png">
+
+Click to run Job, select needed/all items and submit launch:
+<img alt="Cases2" src="./media/reports/SubmitLaunch.png">
 
 Launches:
 <img alt="Launch" src="./media/reports/Launches.png">
