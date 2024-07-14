@@ -17,12 +17,10 @@ allure {
         version.set(allureVersion)
     }
     adapter {
-        // отвечает за появление папочки build/allure-results
-        aspectjWeaver.set(true) //обработка аннотации @Step
+        aspectjWeaver.set(true)
         frameworks {
             junit5 {
-                //название фреймворка
-                adapterVersion.set(allureVersion) //версия интеграции фреймворка и Allure
+                adapterVersion.set(allureVersion)
             }
         }
     }
@@ -33,7 +31,6 @@ sourceCompatibility = 17
 targetCompatibility = 17
 
 dependencies {
-    //noinspection VulnerableLibrariesLocal
     testImplementation(
             "org.junit.jupiter:junit-jupiter:5.10.0",
             "com.codeborne:selenide:$selenideVersion",
@@ -57,13 +54,6 @@ tasks.withType(Test).configureEach {
             events "started", "skipped", "failed", "standard_error", "standard_out"
             exceptionFormat "short"
         }
-    }
-}
-
-
-tasks.register('askmask_smoke_tests', Test) {
-    useJUnitPlatform {
-        includeTags("smoke")
     }
 }
 

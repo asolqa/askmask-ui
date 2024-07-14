@@ -1,4 +1,4 @@
-package io.qameta.ExtensionForManual;
+package io.qameta.extensions;
 
 import io.qameta.allure.LabelAnnotation;
 

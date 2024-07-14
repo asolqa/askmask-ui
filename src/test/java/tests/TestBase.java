@@ -53,7 +53,10 @@ public class TestBase {
         Attach.screenshotAs("Last screenshot");
         Attach.pageSource();
         Attach.browserConsoleLogs();
-        Attach.addVideo();
+
+        if(WEB_CONFIG.isRemoteEnabled()) {
+            Attach.addVideo();
+        }
     }
 
     void closeDriver() {

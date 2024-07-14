@@ -71,12 +71,12 @@ brands in Russia
 
 **Local launch:**
 ```bash  
-./gradlew clean askmask_smoke_test -Denv=local
+./gradlew clean test -Denv=local
 ```
 
 **Remote launch:**
 ```bash  
-./gradlew clean askmask_smoke_test -Denv=remote
+./gradlew clean test -Denv=remote
 ```
 
 All browser configurations are described in the `common-config.propeties`, `local.properties` and `remote.properties` files.
